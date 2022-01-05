@@ -1,11 +1,11 @@
 # 触发工作流的操作
 on:
-  create:
-    tags:
-      - v*
-#  push:
-#    branches:
-#      - master
+#  create:
+#    tags:
+#      - v*
+  push:
+    branches:
+      - master
       # 工作流名字
 name: Build and Release apk
 # 需要执行的任务
@@ -36,3 +36,4 @@ jobs:
         with:
           artifacts: "build/app/outputs/apk/release/*.apk"
           token: ${{ secrets.MY_RElEASE_TOKEN }}
+          tag: v1.0.0
