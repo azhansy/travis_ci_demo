@@ -1,8 +1,11 @@
 # 触发工作流的操作
 on:
-  push:
-    branches:
-      - master
+  create:
+    tags:
+      - v*
+#  push:
+#    branches:
+#      - master
       # 工作流名字
 name: Build and Release apk
 # 需要执行的任务
